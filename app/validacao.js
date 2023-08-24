@@ -2,6 +2,17 @@ function verificaValidacao(chute) {
     const numero = +chute
 
     if(chuteInvalido(numero)){
+        if(chute.toUpperCase() === "GAME OVER"){
+            document.body.innerHTML= `
+            <h2>Game Over!</h2>
+            <h3>O número secreto era ${numeroSecreto}</h3>
+    
+            <button id="jogar-novamente" class="btn-jogar">Jogar novamente</button>
+            `
+        }
+    }
+    
+    if(chuteInvalido(numero)){
         elementoChute.innerHTML+='<div>Valor inválido!</div>'
         return
     }
